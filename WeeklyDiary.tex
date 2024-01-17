@@ -1,0 +1,111 @@
+\documentclass[a4]{scrartcl}
+%----------------------------------------
+% German language
+% \usepackage[ngerman]{babel}
+%----------------------------------------
+% Input in UTF8 accepted
+\usepackage[utf8]{inputenc}
+%----------------------------------------
+% Math-packages
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{amssymb}
+%----------------------------------------
+% Design choices (?)
+%\usepackage{scrlayer-scrpage}
+%\pagestyle{scrheadings}
+% \clearscrheadfoot
+%----------------------------------------
+% Footnotes in tables
+\usepackage{tablefootnote}
+%----------------------------------------
+%----------------------------------------
+% no parindent
+\setlength{\parindent}{0em}
+%----------------------------------------
+% different gap between paragraphs
+\setlength{\parskip}{1.3ex}
+%----------------------------------------
+% spacing between lines
+\usepackage[onehalfspacing]{setspace}
+%----------------------------------------
+% Hurenkinder und Schusterjungen vermeiden
+\clubpenalty = 10000
+\widowpenalty = 10000
+\displaywidowpenalty = 10000
+%----------------------------------------
+% Hyperref package
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=black,
+	filecolor=black,      
+	urlcolor=blue,
+	citecolor=black
+}
+%----------------------------------------
+% Geometry package
+\usepackage{geometry}
+\geometry{
+	paper=a4paper, % Change to letterpaper for US letter
+	top=3cm, % Top margin
+	bottom=3cm, % Bottom margin
+	left=2cm, % Left margin
+	right=3cm, % Right margin
+	%showframe, % Uncomment to show how the type block is set on the page
+}
+%----------------------------------------
+% References
+\usepackage[backend=biber, maxbibnames=99]{biblatex}
+\addbibresource{references.bib}
+%----------------------------------------
+%\ohead{\\
+%		Pina Kolling\\
+%		piko0011}
+	
+%\usepackage[vmargin=1in,hmargin=1in]{geometry}
+\usepackage{enumitem}
+\setlist[itemize]{topsep=0pt,before=\leavevmode\vspace{-1.5em}}
+\setlist[description]{style=nextline}
+
+%----------------------------------------------------------------------------
+%----------------------------------------------------------------------------
+
+\begin{document}
+	
+	\title{\vspace{-5ex} Weekly Diary}
+	\author{
+		Master thesis course in Computing Science \\
+		\textbf{Pina Kolling}
+	}
+	\date{\vspace{-5ex}}
+	
+	\maketitle
+	
+
+	\subsection*{Week 1 (CW 3)}
+	
+	\begin{description}
+		
+		\item[16.01.24] 
+		
+		\begin{itemize}
+			\item First meeting at university
+		\end{itemize}
+		
+		\item[17.01.24]
+		
+		\begin{itemize}
+			\item Setting up file and git for weekly diary
+			\item Writing first mail with topic specification to Vicen\c{c} Torra
+		\end{itemize}
+		
+		
+	\end{description}
+	
+	
+	
+	
+	
+	
+\end{document}

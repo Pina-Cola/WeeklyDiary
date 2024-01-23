@@ -1,10 +1,10 @@
-\documentclass[a4]{scrartcl}
+\documentclass[a4, 11pt]{scrartcl}
 %----------------------------------------
 % German language
 % \usepackage[ngerman]{babel}
 %----------------------------------------
 % Input in UTF8 accepted
-\usepackage[utf8]{inputenc}
+%\usepackage[utf8]{inputenc}
 %----------------------------------------
 % Math-packages
 \usepackage{mathtools}
@@ -17,17 +17,17 @@
 % \clearscrheadfoot
 %----------------------------------------
 % Footnotes in tables
-\usepackage{tablefootnote}
+%\usepackage{tablefootnote}
 %----------------------------------------
 %----------------------------------------
 % no parindent
 \setlength{\parindent}{0em}
 %----------------------------------------
 % different gap between paragraphs
-\setlength{\parskip}{1.3ex}
+%\setlength{\parskip}{1.3ex}
 %----------------------------------------
 % spacing between lines
-\usepackage[onehalfspacing]{setspace}
+%\usepackage[onehalfspacing]{setspace}
 %----------------------------------------
 % Hurenkinder und Schusterjungen vermeiden
 \clubpenalty = 10000
@@ -54,6 +54,30 @@
 	right=3cm, % Right margin
 	%showframe, % Uncomment to show how the type block is set on the page
 }
+
+\usepackage{float}
+
+\usepackage{array, booktabs}
+\usepackage{graphicx}
+\usepackage[dvipsnames, table]{xcolor}
+\usepackage{sectsty}
+\sectionfont{\color{OliveGreen}}
+
+\newcommand{\foo}{\color{OliveGreen}\makebox[0pt]{\textbullet}\hskip-0.5pt\vrule width 1pt\hspace{\labelsep}}
+
+\usepackage{longtable}
+
+
+
+%\renewcommand{\labelitemi}{$\textcolor{BrickRed}{\bullet}$}
+%\renewcommand{\labelitemii}{$\textcolor{BrickRed}{\circ}$}
+%\renewcommand{\labelitemiii}{$\textcolor{BrickRed}{\diamond}$}
+%\renewcommand{\labelitemiv}{$\textcolor{BrickRed}{\ast}$}
+
+
+
+
+
 %----------------------------------------
 % References
 %\usepackage[backend=biber, maxbibnames=99]{biblatex}
@@ -73,7 +97,7 @@
 
 \begin{document}
 	
-	\title{\vspace{-5ex} Weekly Diary}
+	\title{\color{OliveGreen} \vspace{-5ex} Weekly Diary}
 	\author{
 		Master thesis course in Computing Science \\
 		\textbf{Pina Kolling}
@@ -81,9 +105,41 @@
 	\date{\vspace{-5ex}}
 	
 	\maketitle
+	 
+	\begin{table}[H]
+		\renewcommand\arraystretch{1.4}\arrayrulecolor{OliveGreen}
+		\begin{longtable}{@{\,}r <{\hskip 2pt} !{\foo} >{\raggedright\arraybackslash}p{12cm}}
+			% \toprule
+			% \addlinespace[1.5ex]
+			Week 3 & Introduction and first work on project plan \\
+			Week 4 & Finish project plan, set up Git and \LaTeX \ for master thesis \\
+			Week 5 & Set up code on my computer and familiarizing with codebase and research on the topic, including finding literature \\
+			Week 6 & Implementing, documenting the process and literature research \\
+			Week 7 & Implementing, documenting the process and literature research \\
+			Week 8 & Implementing, documenting the process and literature research \\
+			Week 9 & Implementing, documenting the process and literature research, evaluating if it is possible to obtain colour-corrected video results using JIT and then specify or readjust the focus \\
+			Week 10 & Implementing, documenting the process and literature research and creating slides for the midterm seminar\\
+			Week 11 & Implementing, documenting the process and literature research, midterm seminar \\
+			Week 12 & Implementing, documenting the process and literature research, search or implement offline colour-correction software and other suitable solutions for comparison (if needed) \\
+			Week 13 &  Implementing, documenting the process and literature research \\
+			Week 14 &  Implementing, documenting the process and literature research \\
+			Week 15 &  Writing \\
+			Week 16 &  Writing \\
+			Week 17 &  Writing \\
+			Week 18 &  Writing \\
+			Week 19 &  Finalizing, reworking and applying feedback \\
+			Week 20 &  Hand in final version of the thesis \\
+			Week 21 &  Create Slides for the thesis seminar \\
+			Week 22 &  Thesis seminar (defence and opposition) \\
+			Week 23 &  Opponent thesis report \\
+		\end{longtable}
+	\end{table}
+
+
+\newpage
 	
 
-	\subsection*{Week 3}
+	\section*{Week 3}
 	
 	\begin{description}
 		
@@ -195,7 +251,8 @@
 
 %-----------------------------------------------------------------------------	
 %-----------------------------------------------------------------------------	
-\subsection*{Week 4}
+\newpage
+\section*{Week 4}
 
 \begin{description}
 

@@ -68,6 +68,35 @@
 \usepackage{longtable}
 
 
+\usepackage[framemethod=TikZ]{mdframed}
+
+% Style %
+\mdfdefinestyle{enviStyle}{
+	innertopmargin = 10pt,
+	linewidth      = 1pt,
+	frametitlerule = true,
+	roundcorner    = 2pt%
+}
+
+\usepackage{sectsty}
+\newenvironment{CountingDefinition}[2][]{%
+	\ifstrempty{#1}%
+	{\mdfsetup{%
+			frametitle={{\strut ~}}}
+	}%
+	{\mdfsetup{%
+			frametitle={{\strut ~#1}}}%
+	}%
+	\mdfsetup{
+		nobreak                   = true,
+		linecolor                 = OliveGreen,
+		frametitlebackgroundcolor = OliveGreen!50,
+		style                     = enviStyle
+	}
+	\begin{mdframed}[]\relax%
+		\label{#2}}{\end{mdframed}}
+
+
 
 %\renewcommand{\labelitemi}{$\textcolor{OliveGreen}{\bullet}$}
 \renewcommand{\labelitemii}{$\textcolor{Black}{\circ}$}
@@ -113,7 +142,7 @@
 			% \addlinespace[1.5ex]
 			Week 3 & Introduction and first work on project plan \\
 			Week 4 & Finish project plan, start setting up code on my computer  \\
-			Week 5 & Set up code on my computer and familiarizing with codebase and research on the topic, including finding literature, set up Git and \LaTeX \ for master thesis \\
+			Week 5 & Set up code on my computer and first familiarizing with codebase and research on the topic, including finding literature, set up Git and \LaTeX \ for master thesis (on work laptop, my laptop and stationary pc), document execution of code \\
 			Week 6 & Implementing, documenting the process and literature research \\
 			Week 7 & Implementing, documenting the process and literature research \\
 			Week 8 & Implementing, documenting the process and literature research \\
@@ -409,7 +438,38 @@
 	\begin{itemize}
 		\item[]
 		\item Being sick
+		\item Setting up code on new laptop (frontend running but not connected to backend, which seems to be running)
 	\end{itemize}
+
+\end{description}
+\vspace*{-0.8em}
+\begin{CountingDefinition}[Setting up the code]{def:codesetup}
+	\vspace*{-0.2em}
+	\begin{itemize}
+		\item Generate ssh key (\texttt{ssh-keygen}) and add to GitLab
+		\item Clone git repositories (jit-webrtc and accurate-player-3-core)
+		\item Install node.js and set path variables for npm (and yarn)
+		\item Install and run docker
+		\item Execute jit-webrtc code with command from README with \texttt{docker/main/main.sh --threads 16 --port 8080 \$VIDEOFILE}
+		\item Execute accurate player code (run \texttt{npm install --force}, \texttt{npm install yarn} and then npm start, resolve errors, fix dependenciy problems with \texttt{npm audit fix --force} (potentially twice))
+	\end{itemize}
+	
+\end{CountingDefinition}
+
+\begin{description}
+
+
+
+
+
+	%-----------------------------------------------------------------------------		
+\item[]
+%\item[01.02.24, Thursday]
+\begin{itemize}
+	\item[]
+\end{itemize}
+
+
 
 
 

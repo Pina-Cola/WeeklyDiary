@@ -144,8 +144,8 @@
 			% \addlinespace[1.5ex]
 			Week 3 & Introduction and first work on project plan \\
 			Week 4 & Finish project plan, start setting up code on my computer  \\
-			Week 5 & Set up code on my computer and first familiarizing with codebase and research on the topic, including finding literature, set up Git and \LaTeX \ for master thesis (on work laptop, my laptop and stationary pc), document execution of code \\
-			Week 6 & Implementing, documenting the process and literature research \\
+			Week 5 & First research on the topic, including finding literature, set up Git and \LaTeX \ for master thesis (on work laptop, my laptop and stationary pc), document execution of code \\
+			Week 6 & Set up code on my computer and first familiarizing with codebase, finding literature, document execution of code \\
 			Week 7 & Implementing, documenting the process and literature research \\
 			Week 8 & Implementing, documenting the process and literature research and vacation with my grandmother (she turns 90 \heart) so probably reduced work capacity \\
 			Week 9 & Implementing, documenting the process and literature research, evaluating if it is possible to obtain colour-corrected video results using JIT and then specify or readjust the focus \\
@@ -441,7 +441,7 @@
 		\item[]
 		\item Being sick \frownie{}
 		\item Setting up new windows user
-		\item Setting up code on new laptop (frontend running but not connected to backend, which seems to be running)
+		\item Setting up code on new laptop (frontend running but problems with backend/docker container)
 		\item Document execution of code:
 	\end{itemize}
 
@@ -454,7 +454,7 @@
 		\item Clone git repositories (jit-webrtc and accurate-player-3-core)
 		\item Install node.js and set path variables for npm (and yarn)
 		\item Install and run docker
-		\item Execute jit-webrtc code with command from README with \texttt{docker/main/main.sh --threads 16 --port 8080 \$VIDEOFILE}
+		\item Execute jit-webrtc code with command from README with \texttt{docker/main/main.sh --threads 16 --port 8080 \$VIDEOFILE} (not working!)
 		\item Execute accurate player code (run \texttt{npm install --force}, \texttt{npm install yarn} and then npm start, resolve errors, fix dependenciy problems with \texttt{npm audit fix --force} (potentially twice))
 	\end{itemize}
 	
@@ -472,7 +472,7 @@
 	\item[]
 	\item Being sick \frownie{}
 	\item Installing slack
-	\item Trying to look into the backend problem %(\texttt{docker: Error response from daemon: error gathering device information while adding custom device "C": not a device node.})
+	\item Looking into the backend/docker problem %(\texttt{docker: Error response from daemon: error gathering device information while adding custom device "C": not a device node.})
 	\item Setting up WeeklyDiary git and tex file on Codemill-laptop
 \end{itemize}
 
@@ -493,6 +493,27 @@
 	\item First research and adding of references
 	\item First writing in introduction
 \end{itemize}
+
+
+
+
+%-----------------------------------------------------------------------------		
+\item[03.02.24, Saturday]
+\begin{itemize}
+	\item[]
+	\item Being sick \frownie{}
+	\item Trying to solve the docker/backend problem (still unsolved):
+	\begin{itemize}
+		\item Inspecting \texttt{main.sh} script file
+		\item Inspecting docker problems regarding windows
+		\item \texttt{docker-run.sh} not found or opened... Changing the path does not seem to help and the file does exist (feedback: no such file or directory)
+	\end{itemize}
+\end{itemize}
+
+
+
+
+
 
 
 

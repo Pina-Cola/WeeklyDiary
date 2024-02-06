@@ -80,7 +80,7 @@
 	roundcorner    = 2pt%
 }
 
-\usepackage{sectsty}
+
 \newenvironment{CountingDefinition}[2][]{%
 	\ifstrempty{#1}%
 	{\mdfsetup{%
@@ -553,8 +553,13 @@
 \begin{itemize}
 	\item[]
 	\item Installing Linux Ubuntu 22.04 (not booting after updates)
-	\item Installing Linux Ubuntu 23.10
+	\item Installing Linux Ubuntu 23.10 (does not work at all)
 	\item Researching and writing an introduction about Codemill
+	\item Installing Linux Ubuntu 22.04
+	\begin{itemize}
+		\item The problem originated from the NVIDIA graphics card. Before updating, the drivers had to be installed with \texttt{sudo ubuntu-drivers autoinstall}.
+	\end{itemize}
+	\item Installing docker, node.js, git, miktex, texstudio and cloning repositories
 \end{itemize}
 
 

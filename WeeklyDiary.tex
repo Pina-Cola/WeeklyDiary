@@ -40,7 +40,7 @@
 	colorlinks=true,
 	linkcolor=black,
 	filecolor=black,      
-	urlcolor=blue,
+	urlcolor=OliveGreen,
 	citecolor=black
 }
 %----------------------------------------
@@ -104,7 +104,7 @@
 \renewcommand{\labelitemii}{$\textcolor{Black}{\circ}$}
 %\renewcommand{\labelitemiii}{$\textcolor{OliveGreen}{\diamond}$}
 %\renewcommand{\labelitemiv}{$\textcolor{OliveGreen}{\ast}$}
-
+\usepackage[htt]{hyphenat}
 
 \newcommand{\heart}{\ensuremath\heartsuit}
 
@@ -578,9 +578,34 @@
 \item[07.02.24, Wednesday]
 \includegraphics[width=1.4cm]{codemill.png}
 \begin{itemize}
-	\item Trying to connect backend and frontend
+	\item Connecting backend and frontend
+	\item Running the code
+\end{itemize}
+\end{description}
+
+
+
+\vspace*{-0.8em}
+\begin{CountingDefinition}[Running the code] {def:coderun}
+\vspace*{-0.2em}
+\begin{itemize}
+	\item Frontend: 
+	\begin{itemize}
+		\item Open folder \texttt{accurate-player-3-core/packages/demo} in terminal
+		\item Execute \texttt{JIT\_BACKEND=http://localhost:8080 yarn start} or \texttt{./start.sh}
+	\end{itemize}
+	\item Backend:
+	\begin{itemize}
+		\item Open folder \texttt{jit-webrtc} in terminal
+		\item Execute \texttt{docker/main/main.sh --threads 16 --port 8080 https://s3.eu-central-1.amazonaws.com/accurate-player-demo-assets/timecode/sintel-2048-timecode-stereo.mp4
+		}
+	\end{itemize}
+	\item Open \url{http://localhost:5000/controls/jit/index.html} in browser
 \end{itemize}
 
+\end{CountingDefinition}
+
+%\begin{description}
 
 
 
@@ -590,7 +615,7 @@
 
 		
 		
-	\end{description}
+%	\end{description}
 	
 	
 	

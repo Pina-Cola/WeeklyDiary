@@ -55,10 +55,13 @@
 	%showframe, % Uncomment to show how the type block is set on the page
 }
 
+
+
 \usepackage{float}
 
 \usepackage{array, booktabs}
 \usepackage{graphicx}
+\graphicspath{ {./assets/} }
 \usepackage[dvipsnames, table]{xcolor}
 \usepackage{sectsty}
 \sectionfont{\color{OliveGreen}}
@@ -765,13 +768,24 @@ Info: The Codemill logo marks the days at which I have been at the company's off
 	\includegraphics[width=1.4cm]{codemill.png}
 	\begin{itemize}
 		\item Reading code in \texttt{melt.c}, \texttt{JitControl.proto}, \texttt{JitStatus.proto} and other melt files to find out, where to attach a filter/plugin to a video and where the quality setting is changed
-		\item Look into proto 3 syntax
-		\item Getting overview over structure of melt
-		\item Look into \texttt{local\_melt.py}
-		\item Execute melt with filter without JIT to test the filters: \texttt{melt url{https://s3.eu-central-1.amazonaws.com/accurate-player-demo-assets/timecode/sintel-2048-timecode-stereo.mp4} -filter greyscale} for greyscale
+		\item Looking briefly into proto 3 syntax
+		\item Getting brief overview over structure of melt
+		\item Looking briefly into \texttt{local\_melt.py}
+		\item Execute melt with filter without JIT to test the filters: \texttt{melt url{https://s3.eu-central-1.amazonaws.com/accurate-player-demo-assets/timecode/sintel-2048-timecode-stereo.mp4} -filter avfilter.colorbalance av.rs=1 av.gm=1 av.bh=1} for intense colours
+
 		
 		% \item Trying to attach melt filter to a video
 	\end{itemize}
+
+
+\begin{minipage}{0.5\textwidth}
+	\includegraphics[width=0.9\textwidth]{colourdefault.png}
+	Original colours
+\end{minipage}\begin{minipage}{0.5\textwidth}
+	\includegraphics[width=0.9\textwidth]{colourhigh.png}
+	Colours with \texttt{av.rs=1} \texttt{av.gm=1} \texttt{av.bh=1}
+\end{minipage}
+
 	
 	
 \end{description}	

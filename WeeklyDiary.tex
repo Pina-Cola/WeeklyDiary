@@ -767,14 +767,10 @@ Info: The Codemill logo marks the days at which I have been at the company's off
 	\item[13.02.24, Tuesday]
 	\includegraphics[width=1.4cm]{codemill.png}
 	\begin{itemize}
-		\item Reading code in \texttt{melt.c}, \texttt{JitControl.proto}, \texttt{JitStatus.proto} and other melt files to find out, where to attach a filter/plugin to a video and where the quality setting is changed
+		\item Looking briefly into \texttt{melt.c}, \texttt{JitControl.proto}, \texttt{JitStatus.proto} and other melt files to find out, where to attach a filter/plugin to a video and where the quality setting is changed
 		\item Looking briefly into proto 3 syntax
 		\item Getting brief overview over structure of melt
-		\item Looking briefly into \texttt{local\_melt.py}
 		\item Execute melt with filter without JIT to test the filters: \texttt{melt url{https://s3.eu-central-1.amazonaws.com/accurate-player-demo-assets/timecode/sintel-2048-timecode-stereo.mp4} -filter avfilter.colorbalance av.rs=1 av.gm=1 av.bh=1} for intense colours
-
-		
-		% \item Trying to attach melt filter to a video
 	\end{itemize}
 
 
@@ -785,6 +781,11 @@ Info: The Codemill logo marks the days at which I have been at the company's off
 	\includegraphics[width=0.9\textwidth]{colourhigh.png}
 	Colours with \texttt{av.rs=1} \texttt{av.gm=1} \texttt{av.bh=1}
 \end{minipage}
+
+\begin{itemize}
+	\item[$\rightarrow$] This can be used for the offline comparison
+	\item Looking briefly into \texttt{local\_melt.py}
+\end{itemize}
 
 	
 	

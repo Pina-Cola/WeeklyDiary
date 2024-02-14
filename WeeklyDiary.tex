@@ -797,7 +797,13 @@ Info: The Codemill logo marks the days at which I have been at the company's off
 \begin{itemize}
 	\item Looking into \texttt{local\_melt.py} and \texttt{main.py} and trying to add command for melt there
 	\item On the trail of print statements - disappeared or user error? (Aka figuring out where the logging info and print statements are printed to get more insight of the code)
-		\item Fun fact (for later use): Find the name of your docker container with \texttt{docker ps} and get info with \texttt{docker logs --follow <container-name>} (but the missing info cannot be found there either so far)
+	\item[$\rightarrow$] Add \texttt{-v} to command to see logs in the terminal:
+	\texttt{docker/main/main.sh -v --threads 16 --port 8080 https://s3.eu-central-1.amazonaws.com/accurate-player-demo-assets/timecode/sintel-2048-timecode-stereo.mp4
+	}
+	\item Fun fact (might be useful later): Find the name of your docker container with \texttt{docker ps} and get info with \texttt{docker logs --follow <container-name>} (but the missing info cannot be found there either so far)
+	\item Changing overall input command for melt and adding a video filter to the video, that can be viewed in the accurate player using JIT \includegraphics[height=0.32cm]{success.png}\\
+	\includegraphics[width=0.9\textwidth]{ap_red.png}
+	% \item To Do: Can it be changed? Add slider in frontend with JSON, etc
 \end{itemize}
 
 

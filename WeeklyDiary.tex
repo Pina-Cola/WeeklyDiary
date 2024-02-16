@@ -61,6 +61,7 @@
 
 \usepackage{array, booktabs}
 \usepackage{graphicx}
+\usepackage{tikz}
 \graphicspath{ {./assets/} }
 \usepackage[dvipsnames, table]{xcolor}
 \usepackage{sectsty}
@@ -814,7 +815,18 @@ Info: The Codemill logo marks the days at which I have been at the company's off
 
 \item[16.02.24, Thursday]	
 \begin{itemize}
+	\item[]
 	\item Look into frontend code
+	\item Add slider for colour red (without any backend functionality so far): \\
+	\includegraphics[width=5.9cm]{slider_red.png}
+	\item Small \LaTeX \ \texttt{tikz} side project for rounded corners of the graphics in my documents: \\
+	\begin{tikzpicture} 
+		\begin{scope}
+			\clip [rounded corners=.3cm] (0,0) rectangle coordinate (centerpoint) (5.9,1.6cm); 
+			\node [inner sep=0pt] at (centerpoint) {\includegraphics[width=6.0cm]{slider_red2.png}}; 
+		\end{scope}
+	\end{tikzpicture}
+	
 \end{itemize}
 	
 	

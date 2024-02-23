@@ -106,11 +106,23 @@
 
 %\renewcommand{\labelitemi}{$\textcolor{OliveGreen}{\bullet}$}
 \renewcommand{\labelitemii}{$\textcolor{Black}{\circ}$}
-%\renewcommand{\labelitemiii}{$\textcolor{OliveGreen}{\diamond}$}
+\renewcommand{\labelitemiii}{$\textcolor{Black}{\cdot}$}
 %\renewcommand{\labelitemiv}{$\textcolor{OliveGreen}{\ast}$}
 \usepackage[htt]{hyphenat}
 
 \newcommand{\heart}{\ensuremath\heartsuit}
+
+%----------------------------------------
+% Rounded corners in graphics with \cutpic
+\newsavebox{\picbox}	
+\newcommand{\cutpic}[3]{
+	\savebox{\picbox}{\includegraphics[width=#2]{#3}}
+	\tikz\node [draw, rounded corners=#1, line width=4pt,
+	color=white, minimum width=\wd\picbox,
+	minimum height=\ht\picbox, path picture={
+		\node at (path picture bounding box.center) {
+			\usebox{\picbox}};
+	}] {};}
 
 
 %----------------------------------------
@@ -776,10 +788,10 @@ Info: The Codemill logo marks the days at which I have been at the company's off
 
 
 \begin{minipage}{0.5\textwidth}
-	\includegraphics[width=0.9\textwidth]{colourdefault.png}
+	\cutpic{0.3cm}{0.9\textwidth}{colourdefault.png}
 	Original colours
 \end{minipage}\begin{minipage}{0.5\textwidth}
-	\includegraphics[width=0.9\textwidth]{colourhigh.png}
+	\cutpic{0.3cm}{0.9\textwidth}{colourhigh.png}
 	Colours with \texttt{av.rs=1} \texttt{av.gm=1} \texttt{av.bh=1}
 \end{minipage}
 
@@ -799,11 +811,12 @@ Info: The Codemill logo marks the days at which I have been at the company's off
 	\item Looking into \texttt{local\_melt.py} and \texttt{main.py} and trying to add command for melt there
 	\item On the trail of print statements - disappeared or user error? (Aka figuring out where the logging info and print statements are printed to get more insight of the code)
 	\item[$\rightarrow$] Add \texttt{-v} to command to see logs in the terminal:
-	\texttt{docker/main/main.sh -v --threads 16 --port 8080 https://s3.eu-central-1.amazonaws.com/accurate-player-demo-assets/timecode/sintel-2048-timecode-stereo.mp4
+	\texttt{docker/main/main.sh -v --threads 16 --port 8080 https://s3.eu-central-1.amazonaws.com/ accurate-player-demo-assets/timecode/sintel-2048-timecode-stereo.mp4
 	}
 	\item Fun fact (might be useful later): Find the name of your docker container with \texttt{docker ps} and get info with \texttt{docker logs --follow <container-name>} (but the missing info cannot be found there either so far)
 	\item Changing overall input command for melt and adding a video filter to the video, that can be viewed in the accurate player using JIT \includegraphics[height=0.32cm]{success.png}\\
-	\includegraphics[width=0.9\textwidth]{ap_red.png}
+	\cutpic{0.2cm}{0.9\textwidth}{ap_red.png}
+	% \includegraphics[width=0.9\textwidth]{ap_red.png}
 	\item Add filter to \texttt{melt\_args} in different place in code
 	% \item To Do: Can it be changed? Add slider in frontend with JSON, etc
 	\item Start looking into main.py and frontend code base to implement slider to change colour intensity and add different options from the frontend
@@ -894,15 +907,26 @@ Info: The Codemill logo marks the days at which I have been at the company's off
 			\item Remove Subsection \textit{Implementation Details} (Chapter 5)
 			\item Rename Chapter 5 to \textit{Experimental Evaluation and Discussion}
 			\item List of Tables and List of Figures
-			\item References: Use footnotes for the URLs (not in reference list):
+			\item References: Use footnotes for the URLs (f.ex. Codemill Website) and remove them from reference list:
+			\begin{itemize}
+				\item Define command \texttt{$\backslash$myfootcite}
+			\end{itemize}
 		\end{itemize}
+		\item Add caption and short caption for list of figures to each graphic
+		\item Define command \texttt{$\backslash$cutpic} for rounded corners in graphics and apply this to the thesis file and the weekly diary
+		\begin{itemize}
+			\item[$\rightarrow$] Because of very restricted internet, the work on the implementation of the colour correction cannot really be continued (code cannot be executed here) and this is why less important tasks like design of the thesis are done now
+		\end{itemize}
+		\item Seperate multiple footnote citations with a comma (using \texttt{$\backslash$textsuperscript$\{$,$\}$} to maintain the correct font of the comma)
+		\item Write on thesis: Motivation and Research Questions
 	\end{itemize}
 
 % TODO:
-% alle Ecken abrunden?
-% Captions an Grafiken?
-% short version of graphic descripion for list of figures (and tables)
 % Code muss funktionieren lol
+% README References?
+% motivation colour sources
+% motivation: add location or source of photo?
+% 
 
 
 

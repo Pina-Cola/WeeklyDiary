@@ -992,11 +992,17 @@ Info: The Codemill logo marks the days at which I have been at the company's off
 
 
 %----------------------------------------------------------------------------
-\item[29.02.24, Thursday]
+\item[01.03.24, Friday]
 \includegraphics[width=1.4cm]{codemill.png}
 \begin{itemize}
 	\item Making some changes in the schedule and informing supervisors via mail
-	\item Backend: Adding red value with \texttt{"av.rs=$\%$.1f" $\%$ RED\_VALUE} to have a variable that can (hopefully) be changed from the frontend and then the red value will maybe update when it is changes (in \texttt{jit-webrtc/jit/local\_melt.py})
+	\item Adding red value in different places in the code and test the results for better understanding:
+	\begin{itemize}
+		\item Backend: Adding red value with \texttt{"av.rs=$\%$.1f" $\%$ kwargs['av.rs']} to have a variable that can (hopefully) be changed from the frontend and then the red value will maybe update when it is changes (in \texttt{jit-webrtc/jit/local\_melt.py})
+		\item Adding \texttt{RED\_VALUE = 1} and \texttt{$^{**}$({"av.rs": RED\_VALUE})} in \texttt{jit-webrtc/jit/main.py} as a parameter to \texttt{execute\_local\_melt} so it is contained in \texttt{kwargs[$'$av.rs$'$]} in \texttt{jit-webrtc/jit/local\_melt.py}
+		\item Add value for \texttt{rs} in \texttt{jit-webrtc/jit/ffprobe.py}
+		\item[$\rightarrow$] This seems to be the red value with which the video gets send initially from melt 
+	\end{itemize}
 \end{itemize}
 
 

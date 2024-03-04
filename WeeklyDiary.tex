@@ -1042,7 +1042,33 @@ Info: The Codemill logo marks the days at which I have been at the company's off
 \item[04.03.24, Monday]
 \includegraphics[width=1.4cm]{codemill.png}
 \begin{itemize}
-	\item
+	\item Red value can be changes when starting docker with \texttt{--rs <value>}
+	\item \texttt{json.dumps()} function will convert a subset of Python objects into a json string
+	\begin{itemize}
+		\item[$\rightarrow$] add red value to be send to melt in line $\sim$180-200 in \texttt{jit-webrtc/jit/main.py}
+		\item[$\rightarrow$] retrieve red value from frontend in line $\sim$180-200 in \texttt{jit-webrtc/jit/main.py}
+ 	\end{itemize}
+	\item Where does the data get send to melt? Where does melt receive it? Where is it processed?
+	\begin{itemize}
+		\item \texttt{local\_melt.py}? $\rightarrow$ Seems to be for initialization
+		\item Reading through \texttt{README}s in subfolders:
+		
+		\vspace*{-0.5em}
+		\begin{CountingDefinition}[Data Flow]{1}
+			
+			Commands are sent from the browser to \texttt{main.py} via a WebRTC data channel,
+			and then from \texttt{main.py} to \texttt{melt} via a \texttt{stdout/stdin}.
+			
+			\texttt{melt} in turn sends an AVI stream with rendered video and audio to \texttt{main.py} via a named pipe,
+			and status messages and metadata is sent to main.py via another named pipe.
+		\end{CountingDefinition}
+		\item Looking into \texttt{class StdinVideoTrack(VideoStreamTrack):} in line 393 in \texttt{main.py}
+		\item Trying to send input of quality slider to main.py:
+		\begin{itemize}
+			\item Adding \texttt{getRedSliderValue()} in \texttt{packages/demo/src/controls/jit-session /JITSessionDemo.ts}
+		\end{itemize}
+		% \item Session? 
+	\end{itemize}
 \end{itemize}
 
 

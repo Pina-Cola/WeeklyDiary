@@ -1065,10 +1065,38 @@ Info: The Codemill logo marks the days at which I have been at the company's off
 		\item Looking into \texttt{class StdinVideoTrack(VideoStreamTrack):} in line 393 in \texttt{main.py}
 		\item Trying to send input of quality slider to main.py:
 		\begin{itemize}
-			\item Adding \texttt{getRedSliderValue()} in \texttt{packages/demo/src/controls/jit-session /JITSessionDemo.ts}
+			\item Adding \texttt{getRedSliderValue()} and more in \texttt{packages/demo/src/controls/jit-session/JITSessionDemo.ts}
+			\item Adding a bunch of code in the frontend
 		\end{itemize}
 		% \item Session? 
+		% accurate-player-3-core/packages/controls/src/components/quality-select/index.js ???
 	\end{itemize}
+\end{itemize}
+
+
+
+
+
+
+
+
+
+
+
+
+
+%----------------------------------------------------------------------------
+\item[05.03.24, Tuesday]
+\includegraphics[width=1.4cm]{codemill.png}
+\begin{itemize}
+	\item Sending input value from slider to backend (to \texttt{main.py})
+	\item Solving compile issues (using \texttt{yarn start} in \texttt{jit}-folder and \texttt{./start.sh} in \texttt{demo}-folder)
+	\item Value for red included in JSON, that the backend receives but the value is always 1?
+	%\begin{itemize}
+		% \item \texttt{JitService.ts} $\rightarrow$ \texttt{setRedValue()}
+		% \item Error in \texttt{JitService.ts} in line 696 (from 605 on)
+		% \item JSON object posted in \texttt{JitService.ts} from 605 on (?)
+	%\end{itemize}
 \end{itemize}
 
 

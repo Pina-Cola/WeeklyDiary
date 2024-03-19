@@ -1312,11 +1312,35 @@ Info: The Codemill logo marks the days at which I have been at the company's off
 	\begin{itemize}
 		\item Asking for help at Codemill and making new to do list
 		\begin{itemize}
+			
 			\item[\done] Add red value in \texttt{Jit.Control.proto} and adding message to retrieve specific value there
-			\item[$\square$] \texttt{main.py}: Send red value in \texttt{flush\_command\_fifo} and add command for red there ($\sim$ line 140)
-			\item[$\square$] \texttt{main.py}: Retrieve red value from JSON
-			\item[$\square$] Frontend: Send red value in different spot? (JSON)
+			
+			\item[\done] \texttt{main.py}: Add command for red value in \texttt{flush\_command\_fifo} ($\sim$ line 140)
+			
+			\item[\done] Frontend: Send red value in different spot to receive in \texttt{flush\_command\_fifo}
+			
+			\begin{itemize}
+				\item[\done] Add red value to JitAction in \texttt{JITService.ts} ($\sim$ line 30)
+				
+				\item[\done] Solve issue: \texttt{AttributeError:} \texttt{module} \texttt{'JitControl\_pb2'} \texttt{has} \texttt{no} \texttt{attribute} \texttt{'RED\_VALUE'}
+				
+				\begin{itemize}
+					\item Install protoc
+					\item Navigate to \texttt{/jit-webrtc/melt}
+					\item Execute \\ \texttt{protoc --c\_out=. JitStatus.proto} and \\ \texttt{protoc --c\_out=. JitControl.proto} \\ to compile the proto files
+					\item Execute \\ \texttt{protoc --python\_out=. JitStatus.proto} and \\ \texttt{protoc --python\_out=. JitControl.proto} \\ to generate the python files
+					\item Wrong melt folder? Wrong proto version in code? Where does this come from? Get different version...
+					\item Changing from proto3 to proto2 and downloading correct files
+					\item Pulling \texttt{https://github.com/sirf/mlt} and then executing \texttt{jit-webrtc/jit\$ protoc  --python\_out=.  -I../../mlt/src/melt/  JitControl.proto} and \texttt{jit-webrtc/jit\$ protoc  --python\_out=.  -I../../mlt/src/melt/  JitStatus.proto}
+					\item[$\rightarrow$] Found bug in Codebase: \texttt{KEEP\_ALIVE} missing in the current version of the \texttt{.proto} file -- bug was fixed now
+				\end{itemize}
+				
+			\end{itemize}
+				
+			\item[\done] \texttt{main.py}: Retrieve red value from JSON in \texttt{flush\_command\_fifo} ($\sim$ line 140)
+			
 			\item[$\square$] Apply filter in melt (how exactly?)
+			
 		\end{itemize}
 		% Fragen strukturieren:
 		% - Where should I send the data?

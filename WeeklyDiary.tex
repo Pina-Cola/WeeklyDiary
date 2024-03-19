@@ -124,6 +124,12 @@
 			\usebox{\picbox}};
 	}] {};}
 
+% Checkbox
+\usepackage{pifont}
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\done}{\rlap{$\square$}{\raisebox{2pt}{\large\hspace{1pt}\cmark}}%
+	\hspace{-2.5pt}}
+
 
 %----------------------------------------
 % References
@@ -1198,15 +1204,135 @@ Info: The Codemill logo marks the days at which I have been at the company's off
 	\includegraphics[width=1.4cm]{codemill.png}
 	\begin{itemize}
 		\item Red value in \texttt{main.py} in line 813 for the initialization with \texttt{--rs} for red value in terminal
-		\item \texttt{flush\_control} line 90-95 in \texttt{main.py} seems to send the command message to the melt process
+		\item \texttt{flush\_control} line 90-95 in \texttt{main.py} seems to send the command message to the melt process (play, pause, etc.)
 		\item \texttt{flush\_command\_fifo}: Parse command json from browser, send command messages to melt process
 		\item Line 177-210 in \texttt{main.py}: WebRTC data channel (dc) is being utilized to send data to the Melt backend.
+		\begin{itemize}
+			\item[$\rightarrow$] Race condition or synchronization issue, because the value of red from the frontend is never assigned there
+			\item[$\rightarrow$] Sending data on a different place to melt? 
+		\end{itemize}
 	\end{itemize}
 	
 	
 	
 	
+		
+	
+	
+	
+	
+	
+	
+	
+	%----------------------------------------------------------------------------
+	\item[13.03.24, Wednesday]
+	\includegraphics[width=1.4cm]{codemill.png}
+	\begin{itemize}
+		\item \texttt{json.dumps} in line 189 in \texttt{main.py}
+		\item Trying to get red value from \texttt{main.py} to \texttt{ffprobe.py}
+		\begin{itemize}
+			\item[$\rightarrow$] Is this only relevant for initialization?
+			\item[$\rightarrow$] Add parameter for red value in \texttt{def probe(url, rs = None)}
+		\end{itemize}
+		\item \textit{Practising} presentation for mid term seminar and adapting the slides
+	\end{itemize}
 
+
+
+	
+%----------------------------------------------------------------------------
+\item[14.03.24, Thursday]
+\includegraphics[width=1.4cm]{codemill.png}
+\begin{itemize}
+	\item Mid term seminar
+	\item DataTjej event at Codemill
+\end{itemize}
+
+
+
+
+
+	
+%----------------------------------------------------------------------------
+\item[16.03.24, Saturday]
+\begin{itemize}
+	\item[]
+	\item \texttt{ffprobe.py} seems to only be called in initialization and the value for red is not assigned correctly in \texttt{main.py} $\rightarrow$ asynch/race condition
+\end{itemize}
+	
+	
+
+
+
+
+
+%----------------------------------------------------------------------------
+\item[17.03.24, Sunday]
+\begin{itemize}
+	\item[]
+	\item Researching runtime manipulation of melt command more in depth
+\end{itemize}
+
+
+
+
+	
+	
+
+	
+	
+\end{description}	
+
+
+
+
+
+
+
+
+
+
+
+%-----------------------------------------------------------------------------	
+%-----------------------------------------------------------------------------	
+\newpage
+\section*{Week 12}	
+
+
+
+
+
+\begin{description}
+	
+	
+	
+	%----------------------------------------------------------------------------
+	\item[19.03.24, Tuesday]
+	\includegraphics[width=1.4cm]{codemill.png}
+	\begin{itemize}
+		\item Asking for help at Codemill and making new to do list
+		\begin{itemize}
+			\item[\done] Add red value in \texttt{Jit.Control.proto} and adding message to retrieve specific value there
+			\item[$\square$] \texttt{main.py}: Send red value in \texttt{flush\_command\_fifo} and add command for there (line 140)
+			\item[$\square$] \texttt{main.py}: Retrieve red value from JSON
+			\item[$\square$] Frontend: Send red value in different spot? (JSON)
+			\item[$\square$] Apply filter in melt (how exactly?)
+		\end{itemize}
+		% Fragen strukturieren:
+		% - Where should I send the data?
+		% - Value never assigned correctly there
+		% - Where does it get received? Use mlt functions like      	\texttt{mlt_service_attach} or where should the filter be applied?
+	\end{itemize}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 \end{description}	

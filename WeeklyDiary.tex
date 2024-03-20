@@ -1353,6 +1353,47 @@ Info: The Codemill logo marks the days at which I have been at the company's off
 	
 	
 	
+		
+	
+%----------------------------------------------------------------------------
+	\item[20.03.24, Wednesday]
+	\includegraphics[width=1.4cm]{codemill.png}
+	\begin{itemize}
+		
+			\item Cleaning up the code a little
+			
+			
+			\item[$\square$] Figuring out where/how to apply filter in melt:
+			
+			\begin{itemize}
+				
+				\item[$\square$] Look into \texttt{jit-webrtc/mlt/src/melt/jit.c} and alter \texttt{jit\_action} function
+					
+				\item How/Where are the other commands applied? (\texttt{PLAY}, \texttt{KEEP\_ALIVE}, etc )
+				
+				
+				\item Where does \texttt{flush\_control} send the commands to?
+				\begin{itemize}
+					\item \texttt{melt\_server\_socket\_address = LOCAL\_MELT["melt-ssock-addr"]}
+					\item Server socket: \texttt{/tmp/melt-sock-7}
+				\end{itemize}
+			
+				\item Red value needs to used in a function that attaches a filter $\rightarrow$ Which function? Possibly \texttt{mlt\_filter\_connect} or \texttt{mlt\_service\_attach}
+				
+			\end{itemize}	
+		
+			
+			\item[$\square$] Round value for red to two decimal digits (?)
+
+			
+	\end{itemize}
+
+	
+	
+	
+	
+	
+	
 	
 	
 	
